@@ -6,23 +6,19 @@
 
     width: 900px;
     margin: auto;
- }
+    background-color: rgba(22, 104, 228, 0.925);
+
+}
  
- .content,
- h2,
- p,
- #tempoTrascorso {
-    background-color: transparent;
- }
  
- h1 {
+h1 {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
- }
+}
  
  .text-center {
     text-align: center;
- }
+}
  
  .icon-grid {
  
@@ -32,31 +28,31 @@
     align-items: center;
  
  
- }
+}
  
- .show {
+.show {
  
     opacity: 90!important;
     visibility: visible!important;
  
- }
+}
  
- #griglia>div {
+#griglia>div {
     box-shadow: 0 3px 20px #eda6fcdc;
     background-color: #b80adbdc;
-    background: linear-gradient(0deg, rgba(195, 34, 116, 1) 0%, rgba(253, 45, 248, 1) 100%);
     border: 1px solid #3889c4;
-    border-radius: 10%;
+    border-radius: 10px;
     margin: 20px 10px;
     width: 120px;
     height: 120px;
- }
+}
  
- .timer {
+.timer {
     padding: 10px 0;
- }
+}
  
- .icon {
+.icon {
+    background-color: #b80adbdc;
     font-size: 80px;
     text-align: center;
     visibility: visible !important;
@@ -64,33 +60,32 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
- }
+}
  
- .disabled {
+.disabled {
     pointer-events: none;
     cursor: wait;
- }
+}
  
- .show {
+.show {
  
     animation-duration: .5s;
-    background: rgb(254, 153, 255);
-    background: linear-gradient(0deg, rgba(254, 153, 255, 1) 0%, rgba(253, 45, 248, 1) 100%);
+    background-color: white;
     border: 1px solid #3889c4;
     border-radius: 10px;
     animation-name: rotazione-carta;
- }
+}
  
- .find {
+.find {
  
     animation-duration: .5s;
     background-color: rgba(247, 212, 16, 0.56);
     border: 1px solid #3889c4;
-    border-radius: 10%;
+    border-radius: 10px;
     animation-name: indovinato;
- }
+}
  
- .button {
+.button {
     color: white;
     font-size: 22px;
     text-align: center;
@@ -99,14 +94,14 @@
     background-color: #b80adbdc;
     border: 1px solid #3889c4;
     border-radius: 5%;
- }
+}
  
- .button:hover {
+.button:hover {
     background-color: #16486c;
     border: none;
- }
+}
  
- #modal {
+#modal {
     display: none;
     justify-content: center;
     align-items: center;
@@ -116,17 +111,21 @@
     position: fixed;
     top: 0;
     left: 0;
- }
+}
  
- #modal.active {
+#modal.active {
     display: flex;
- }
+}
  
- #modal h2 {
+#modal h2 {
     margin-top: 20px;
- }
+}
+
+h2, .content, p, #tempoTrascorso {
+    background-color: transparent;
+}
  
- @media (max-width: 600px) {
+@media (max-width: 600px) {
     .container {
        width: 400px;
     }
@@ -140,9 +139,9 @@
     .icon {
        font-size: 60px;
     }
- }
+}
  
- @media (max-width: 420px) {
+@media (max-width: 420px) {
     .container {
        width: 230px;
     }
@@ -156,9 +155,9 @@
     .icon {
        font-size: 20px;
     }
- }
+}
  
- @keyframes indovinato {
+@keyframes indovinato {
  
  
     from {
@@ -169,23 +168,16 @@
     to {
        transform:rotate(360deg);
     }
- }
+}
  
- @keyframes rotazione-carta {
- 
- 
+@keyframes rotazione-carta {
     from {
-       transform: perspective(300px) rotate3d(0, 1, 0, 50deg);
-       animation-timing-function: ease-in;
-    }
- 
+        transform:  rotate3d(0, 1, 0, 120deg);
+        animation-timing-function: ease-in;    }
     50% {
-       transform: perspective(300px) rotate3d(0, 1, 0, -10deg);
-      animation-timing-function: ease-in;
+        transform:  rotate3d(0, 1, 0, 30deg);
+        animation-timing-function: ease-in;
     }
- 
     to {
-       transform: perspective(300px);
-       animation-timing-function: ease-in;
-    }
- }
+        animation-timing-function: ease-in;    }
+}

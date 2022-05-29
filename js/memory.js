@@ -4,7 +4,7 @@ let arrayComparison = [];
 
 document.body.onload = startGame();
 
-//variabili interval, iconsFind, modal e timer
+
 
 var interval; 
 var modal = document.querySelector("#modal");
@@ -26,22 +26,21 @@ function shuffle(a) {
     return a;
 }
 
-//funzione che rimuove la classe active
+
 
 function playAgain() {
     modal.classList.remove("active");
     startGame();
 }
 
-//funzione startGame
+
 
 function startGame() {
     
-    arrayComparison= [];
+    emptyArray= [];
     clearInterval(interval);
 
     let arrayShuffle = shuffle(arrayAnimali);
-
     let cardGrid = document.querySelector("body #griglia");
     while (cardGrid.hasChildNodes()) {
         cardGrid.removeChild(cardGrid.firstChild);
@@ -103,27 +102,17 @@ function displayIcon() {
     console.log(iconsFind)
 }
 
-//funzione che viene mostrata alla fine del gioco, quando tutte le card sono state indovinate
+
 
 function openModal() {
     if (iconsFind.length == 24) {
         clearInterval(interval);
         modal.classList.add("active");
         document.querySelector(".content #tempoTrascorso").innerHTML = timer.innerHTML;
-        startGame()
     }
 }
 
-// una funzione che nasconde la modale alla fine e riavvia il gioco
 
-/*function closeModal() {  
-    closeicon.addEventListener("click", function() {
-        modal.classList.remove("active");
-        ;
-    });
-}*/
-
-// una funzione che calcola il tempo e aggiorna il contenitore sotto
 
 function Timer() {
 
@@ -144,4 +133,6 @@ function Timer() {
         }
     }, 1000);
 }
+
+
 
