@@ -62,7 +62,7 @@ function startGame() {
 
     for (let i = 0; i < icons.length; i++) {
         icons[i].addEventListener("click", displayIcon);
-        icons[i].addEventListener("click", openModal);
+        icons[i].addEventListener("click", showModal);
     }
 }
 
@@ -104,12 +104,19 @@ function displayIcon() {
 
 
 
-function openModal() {
+function showModal() {
     if (iconsFind.length == 24) {
         clearInterval(interval);
         modal.classList.add("active");
         document.querySelector(".content #tempoTrascorso").innerHTML = timer.innerHTML;
     }
+}
+
+function hideModal() {
+    closeicon.addEventListener("click", function () {
+        modal.classList.remove("active");
+        startGame();
+    });
 }
 
 
